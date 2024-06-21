@@ -1,0 +1,33 @@
+<section class="container">
+    <table class="table table-bordered mt-5" id="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Size</th>
+                <th scope="col">Image</th>
+                <%if (user) { %>
+                    <th scope="col">Options</th>
+                <% };%>
+                <th scope="col">
+                    <form class="input-group w-100 text-center" id="search-form" action="/memes-overview" method="POST">
+                        <input type="search" name="search" id="search" class="form-control rounded" placeholder="Search meme">
+                        <button class="btn btn-dark"><i class="bi bi-search"></i></button>
+                    </form>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <% memes.data.forEach(meme=> { %>
+                <tr class="meme-row">
+                    <td><%- meme.id %></td>
+                    <td><%- meme.width %> x <%- meme.height %></td>
+                    <td><img src="<%- meme.url %>" class="meme-image" alt="<%- meme.name %>" width="<%- meme.width * 20 / 100 %>" height="<%- meme.height * 20 / 100 %>"></td>
+                    <%if (user) { %>
+                        <td><button class="btn btn-link details-btn" onclick="visited(this)" data-meme-id="<%- meme.id %>">Details</button></td>
+                    <% };%>
+                    <td class="meme-name"><strong><%- meme.name %></strong></td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+</section>

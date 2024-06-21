@@ -1,0 +1,22 @@
+.container {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    width: 100%;
+}
+
+section {
+    padding-top: 250px;
+}
+table {
+    position: absolute;
+    max-width: 100vw;
+    min-width: 400px;
+    width: 100%;
+    position: absolute;
+    margin: 0px auto;
+    margin-top: 50px;
+}
+tr td:first-child{
+    text-transform: capitalize;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Memes Overview</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../stylesheets/navbar.css">
+    <link rel="stylesheet" href="../../stylesheets/memes.css">
+    <link rel="stylesheet" href="/bootstrap-icons/bootstrap-icons.min.css">
+  </head>
+
+  <body class="position-relative" data-bs-spy="scroll">
+    <%- include('./partials/navbar.ejs') %>
+      <%- include('./partials/memes-overview.ejs') %>
+        <%- include('./partials/scripts.ejs') %>
+          <script>
+            handleMemeDetailButtonClick();
+          </script>
+  </body>
+
+</html>

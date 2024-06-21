@@ -1,0 +1,24 @@
+<section class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Dimensions</th>
+                <th>URL</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%- data.name %></td>
+                <td><%- data.id %></td>
+                <td><%- data.width %> x <%- data.height %></td>
+                <td><%- data.url %></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="image-container">
+        <img src="<%- data.url %>" alt="<%- data.name %>">
+    </div>
+</section>

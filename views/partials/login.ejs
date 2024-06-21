@@ -1,0 +1,30 @@
+<header class="home">
+    <% if(!user) { %>
+    <form action="/login/password" method="post" class="login-form">
+        <img src="/company-logo/logo.png" alt="logo" class="login-logo">
+        <h6 class="login-title">Sign in</h6>
+        <div class="input-container">
+                <div class="input-group">
+                    <input type="text" name="username" id="username" placeholder="Username" class="form-control">
+                </div>
+                <div class="input-group">
+                    <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                </div>
+                <div class="input-group">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div>
+        </div>
+    </form>
+    <% } else { %>
+        <form action="/login/logout" method="post" class="login-form">
+            <img src="/company-logo/logo.png" alt="logo" class="login-logo">
+            <p><br>You're already signed in as: <strong><%- user.username %></strong><br><br>Click the button below to sign out.</p>
+            <p>Click here to navigate back to the <a href="/memes-overview">Memes Overview</a></p>
+            <div class="input-container">
+                <div class="input-group">
+                    <button type="submit" class="btn btn-primary">Sign Out</button>
+                </div>
+            </div>
+        </form>
+        <% } %>
+</header>
